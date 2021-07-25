@@ -23,7 +23,7 @@ public class JournalEntry {
         this.created = format.parse(date);
     }
 
-    JournalEntry() {}
+    protected JournalEntry() {}
 
     public Long getId() {
         return id;
