@@ -51,4 +51,22 @@ public class JournalEntry {
     public void setSummary() {
         this.summary = summary;
     }
+    
+    public String getCreatedAsShort(){
+        return format.format(created);
+    }
+
+    public String toString(){
+        StringBuilder value = new StringBuilder("* JournalEntry(");
+        value.append("Id: ");
+        value.append(id);
+        value.append(",Title: ");
+        value.append(title);
+        value.append(",Summary: ");
+        value.append(summary);
+        value.append(",Created: ");
+        value.append(format.format(created));
+        value.append(")");
+        return value.toString();
+    }
 }
