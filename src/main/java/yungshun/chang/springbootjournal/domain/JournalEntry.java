@@ -1,11 +1,16 @@
 package yungshun.chang.springbootjournal.domain;
 
+import javax.persistence.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+@Entity
+@Table(name="entry")
 public class JournalEntry {
 
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String title;
     private Date created;
@@ -51,7 +56,7 @@ public class JournalEntry {
     public void setSummary() {
         this.summary = summary;
     }
-    
+
     public String getCreatedAsShort(){
         return format.format(created);
     }
